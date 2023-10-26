@@ -1,18 +1,9 @@
 #!/usr/bin/env bash
-# Script to displays the time for 12 hours and 59 minutes.
-# Displays hours from 0 to 12
-# Displays minutes from 1 to 59
+# Script that displays the content of the current directory in list format
+# Only displays the part of the name after the first dash
 
-hour=0
+mylist=$(ls)
 
-while [ $hour -le 12 ]
-do
-  echo "Hour: $hour"
-  minute=1
-  while [ $minute -le 59 ]
-  do
-    echo "$minute"
-    (( minute++ ))
-  done
-  (( hour++ ))
+for i in $mylist; do
+  echo "$i" | cut -d '-' -f2
 done
