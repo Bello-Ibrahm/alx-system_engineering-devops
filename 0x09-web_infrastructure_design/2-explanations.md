@@ -43,7 +43,7 @@ The process of collecting monitoring data in a complex infrastructure involving 
 By following these steps, a monitoring tool can effectively collect and provide insights into the performance and health of the entire infrastructure, including multiple servers, firewalls, SSL, monitoring clients, web servers, application servers, application files, and databases.
 
 
-## Wwhat to do if you want to monitor your web server QPS
+## What to do if you want to monitor your web server QPS
 Monitoring the Query Per Second (QPS) on your web server is crucial for understanding the server's performance, identifying potential issues, and ensuring optimal operation. Here are steps you can take to monitor QPS effectively:
 
 1. `Choose a Monitoring Solution:`
