@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# install and config HAproxy
+sudo apt-get update
+sudo apt-get install -y haproxy
+echo -e "\nfrontend localnodes\n\tbind *:80\n\tmode http\n\tdefault_backend nodes" | sudo tee -a /etc/haproxy/haproxy.cfg
+echo -e "\nbackend nodes\n\tmode http\n\thttp-request set-header X-Forwarded-Port %[dst_port]\n\tbalance roundrobin\n\toption forwardfor\n\tserver 304338-web-01 54.144.134.116:80 check\n\tserver 304338-web-02 54.144.150.121:80 check" | sudo tee -a /etc/haproxy/haproxy.cfg
+sudo service haproxy restart
