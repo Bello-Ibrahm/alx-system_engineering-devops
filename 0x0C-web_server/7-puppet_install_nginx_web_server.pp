@@ -4,13 +4,13 @@ package {'nginx':
 }
 
 exec {'install':
-  command  => 'sudo apt-get update ; sudo apt-get -y install nginx',
+  command  => 'sudo apt-get update; sudo apt-get -y install nginx',
   provider => shell,
 
 }
 
 exec {'Hello':
-  command  => 'echo "Hello World!" | sudo tee /var/www/html/index.html',
+  command  => 'echo "Hello World!" | sudo tee /var/www/html/index.nginx-debian.html',
   provider => shell,
 }
 
