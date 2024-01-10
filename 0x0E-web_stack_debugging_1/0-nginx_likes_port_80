@@ -1,0 +1,8 @@
+#!/usr/bin/env bash 
+# Debugging nginx to listen on port 80
+# Using the ln(link) commnad with the options (-s, -f) flags
+# Note: The below command itself is creating a symbolic
+# link from /etc/nginx/sites-available/default to /etc/nginx/sites-enabled/default
+# with the flags -s(creates symbolic link) and -f(If the target file already exists, it is removed and replaced)
+sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo service nginx restart
