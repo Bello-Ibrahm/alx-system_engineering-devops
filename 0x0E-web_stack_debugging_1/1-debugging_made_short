@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Script to replace all occurrences of "8080" with "80" in the Nginx default configuration file
+# -i(in-place)and the g flag at the end means global (replace all occurrences on each line). 
+sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
+service nginx restart; pkill -o nginx
