@@ -19,3 +19,7 @@ Requirements, your post must cover:
 Publish your blog post on Medium or LinkedIn; share the URL of your blog post in your answer file and in the field below.
 
 Please, remember that these blogs must be written in English to further your technical ability in a variety of settings.
+
+[Link to the article](https://www.linkedin.com/pulse/what-happens-when-you-type-googlecom-your-browser-press-bello-ibrahim-raw2f)
+
+[Link to the diagram](https://imgur.com/1eore31) 
