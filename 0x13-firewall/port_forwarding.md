@@ -1,11 +1,14 @@
-#Steps in setting port forwarding on ufw
+# Steps in setting port forwarding on ufw
 
-1. Allow Traffic to Port 8080(Open port 8080 for incoming traffic):
+1. Allow Traffic to Port `8080` (Open port 8080 for incoming traffic):
 ```
 sudo ufw allow 8080
 ```
 2. Enabling IP Forwarding in `/etc/sysctl.conf`
-  - Enable IP forwarding to allow the system to forward packets between network interfaces by uncomment the line(`sudo vi /etc/sysctl.conf`) and remove the preceded `#`:
+  - Enable IP forwarding to allow the system to forward packets between network interfaces by uncomment the line that preceded by `#`:
+```
+sudo vi /etc/sysctl.conf
+```
 ```
 net.ipv4.ip_forward=1
 ```
@@ -14,12 +17,12 @@ net.ipv4.ip_forward=1
 sudo sysctl -p
 ```
 4. Set Up NAT (Network Address Translation):
-  - Using `iptables` to set up NAT rules for port forwarding with the following command:
+    - Using `iptables` to set up NAT rules for port forwarding with the following command:
 ```
-# forwards traffic from port 8080 to port 80
 sudo iptables -t nat -A PREROUTING -p tcp --dport 8080 -j REDIRECT --to-port 80
 ```
-5. Save the iptables rules to make them persistent across reboots:
+This forwards traffic from port 8080 to port 80
+5. Save the `iptables` rules to make them persistent across reboots:
 ```
 sudo sh -c 'iptables-save > /etc/iptables.rules'
 ```
@@ -27,7 +30,7 @@ sudo sh -c 'iptables-save > /etc/iptables.rules'
 ```
 sudo vi /etc/ufw/before.rules
 ```
-  - Add the following lines at the beginning of the file:
+    - Add the following lines at the beginning of the file:
 ```
 *nat
 :PREROUTING ACCEPT [0:0]
