@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# Configure a ufw firewall to block all incoming traffic
+#+ !(SSH, HTTP, and  HTTPS).
+
+# Check if ufw is installed
+if ! command -v ufw &> /dev/null
+then
+    sudo apt-get install -y ufw
+fi
+
+# Enable IPv6
+sudo sed -i 's/IPV6=.*/IPV6=yes/' /etc/default/ufw
+
+# Configure ufw rules
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+sudo ufw allow 22/tcp
+sudo ufw allow 443/tcp
+sudo ufw allow 80/tcp
+
+# Enable the ufw
+sudo ufw enable
