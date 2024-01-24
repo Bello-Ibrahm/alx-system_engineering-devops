@@ -210,4 +210,4 @@ sudo systemctl start mysql # CentOS/RHEL
 ```
 
 
-AUTHOR: <Bello Ibrahim>
+AUTHOR: Bello Ibrahim
