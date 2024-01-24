@@ -4,9 +4,6 @@
 CREATE USER IF NOT EXISTS 'holberton_user'@'localhost'
 IDENTIFIED BY 'projectcorrection280hbtn';
 
--- Grant permission to show replica status
-GRANT REPLICATION CLIENT ON *.* TO 'holberton_user'@'localhost';
-
 -- Grant permision on select
 GRANT SELECT ON *.* TO 'holberton_user'@'localhost';
 
