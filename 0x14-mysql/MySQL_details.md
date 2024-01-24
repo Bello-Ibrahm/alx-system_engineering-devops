@@ -1,4 +1,171 @@
-# Steps to changing MySQL password
+## Creating the MySQL server user and Database:
+```
+-- Creates the MySQL server user holberton_user
+CREATE USER IF NOT EXISTS 'holberton_user'@'localhost'
+IDENTIFIED BY 'projectcorrection280hbtn';
+
+-- Grant permission to show replica status
+GRANT REPLICATION CLIENT ON *.* TO 'holberton_user'@'localhost';
+
+-- Grant permision on select
+GRANT SELECT ON *.* TO 'holberton_user'@'localhost';
+
+-- Creating Database tyrell_corp
+CREATE DATABASE IF NOT EXISTS `tyrell_corp`;
+
+USE tyrell_corp;
+
+-- Creating a table called nexus6 in tyrell_corp db
+CREATE TABLE IF NOT EXISTS `nexus6` (`id` INT AUTO_INCREMENT PRIMARY KEY, `name` VARCHAR(256));
+
+-- Inserting records
+INSERT INTO `nexus6`(`name`) VALUES("Leon"),("Bello Ibrahim");
+```
+
+## Setting up a MySQL replica involves configuring one MySQL server as a replication slave of another MySQL server (the master). 
+Below are the general steps to set up a MySQL replication on Ubuntu. 
+having two Ubuntu servers, one as the master and the other as the slave.
+
+Before you proceed, make sure that `UFW` is allowing connections on port `3306` (default MySQL port) otherwise replication will not work.
+
+To confirm `ufw` is not blocking port `3306` run this command below:
+```
+sudo ufw status
+```
+Output:
+```
+Status: active
+
+To                         Action      From
+--                         ------      ----
+Nginx HTTP                 ALLOW       Anywhere
+22/tcp                     ALLOW       Anywhere
+443/tcp                    ALLOW       Anywhere
+80/tcp                     ALLOW       Anywhere
+8080                       ALLOW       Anywhere
+3306                       ALLOW       Anywhere
+Nginx HTTP (v6)            ALLOW       Anywhere (v6)
+22/tcp (v6)                ALLOW       Anywhere (v6)
+443/tcp (v6)               ALLOW       Anywhere (v6)
+80/tcp (v6)                ALLOW       Anywhere (v6)
+8080 (v6)                  ALLOW       Anywhere (v6)
+3306 (v6)                  ALLOW       Anywhere (v6)
+```
+Review the output for a rule that allows incoming connections on port 3306. It should look like the above.
+
+To allow the `ufw` run the command:
+```
+sudo ufw allow 3306
+```
+then reload `UFW`:
+```
+sudo ufw reload
+```
+Verify MySQL Service:
+ Additionally, ensure that your MySQL service is running and listening on port 3306. You can check this using the following command:
+```
+sudo netstat -plnt | grep 3306
+```
+Output:
+```
+tcp6       0      0 :::3306                 :::*                    LISTEN      178396/mysqld
+```
+
+Once everything is in order you can begin the steps below:
+###  On the Master Server:
+1. Open the MySQL configuration file on the master server(to enable binary logging):
+```
+sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf
+```
+Add the following lines to enable binary logging:
+```
+server-id            = 1
+log_bin              = /var/log/mysql/mysql-bin.log
+
+# name of database to replicate
+binlog_do_db    = tyrell_corp
+```
+Restart the mysql server:
+```
+sudo service mysql restart
+```
+2. Create a Replication User (Connect to MySQL and create a user specifically for replication):
+``` 
+mysql -u root -p
+```
+```
+CREATE USER 'replica_user'@'%' IDENTIFIED BY 'replica_pwd';
+GRANT REPLICATION SLAVE ON *.* TO 'replica_user'@'%' IDENTIFIED BY 'replica_pwd';
+GRANT SELECT ON *.* TO 'replica_user'@'%';
+FLUSH PRIVILEGES;
+```
+3. Get the Binary Log Coordinates (While still in the MySQL shell, note the current binary log file and position):
+```
+SHOW MASTER STATUS;
+```
+Similar to this:
+```
++------------------+----------+--------------------+------------------+
+| File             | Position | Binlog_Do_DB       | Binlog_Ignore_DB |
++------------------+----------+--------------------+------------------+
+| mysql-bin.000009 |      107 | tyrell_corp        |                  |
++------------------+----------+--------------------+------------------+
+1 row in set (0.00 sec)
+```
+
+### On the Slave Server:
+1. Open the MySQL configuration file (to enable binary logging and set Server ID):
+```
+sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf
+```
+Add the following lines:
+```
+server-id            = 2
+relay-log            = /var/log/mysql/mysql-relay-bin.log
+
+# name of database to replicate
+binlog_do_db    = tyrell_corp
+```
+Restart the MySQL Server:
+```
+sudo service mysql restart
+```
+2. Connect to MySQL on the slave (Configure Replication):
+```
+mysql -u root -p
+```
+Run the following SQL commands:
+```
+CHANGE MASTER TO
+    MASTER_HOST='master_IP_address',
+    MASTER_USER='replica_user',
+    MASTER_PASSWORD='replica_pwd',
+    MASTER_LOG_FILE = 'mysql-bin.000009',
+    MASTER_LOG_POS = 107;
+
+    START SLAVE;
+```
+Replace `master_IP_address`, `replica_user`, `replica_pwd`, `mysql-bin.000009`, and `107` with the appropriate values.
+
+3. Check Replication Status (verify that replication is running without errors):
+```
+SHOW SLAVE STATUS\G;
+```
+Look for the `Slave_IO_Running` and `Slave_SQL_Running` values. If both are `Yes`, replication is working.
+
+
+In order to remove replication user:
+```
+STOP SLAVE;
+RESET SLAVE;
+```
+Optional command to drop replica user on the slave
+
+```
+DROP USER 'replication_user'@'%';
+```
+
+## Steps to changes the  MySQL password
 
 1. Stop the MySQL service:
 ```
@@ -42,57 +209,5 @@ sudo service mysql start   # Ubuntu/Debian
 sudo systemctl start mysql # CentOS/RHEL
 ```
 
-# Creating and Granting permissions for `holberton_user` User.
 
-```
--- Creates the MySQL server user holberton_user
-CREATE USER IF NOT EXISTS 'holberton_user'@'localhost'
-IDENTIFIED BY 'projectcorrection280hbtn';
-
--- To grant all privileges uncomment below
--- GRANT ALL PRIVILEGES ON *.* TO 'holberton_user'@'localhost';
-
--- Grant permission to show databases
--- GRANT SHOW DATABASES ON *.* TO 'holberton_user'@'localhost';
-
--- Grant permission to show replica status
-GRANT REPLICATION CLIENT ON *.* TO 'holberton_user'@'localhost';
-
--- Grant permision on select for all database/tables
-GRANT SELECT ON *.* TO 'holberton_user'@'localhost';
-
--- To remove all privileges uncomment below
--- REVOKE ALL PRIVILEGES ON *.* FROM 'holberton_user'@'localhost';
-```
-
-
-```
-CREATE DATABASE IF NOT EXISTS `tyrell_corp`;
-
-USE tyrell_corp;
-
--- Creates a table called first_table in my current DBU
-CREATE TABLE IF NOT EXISTS `nexus6` (`id` INT AUTO_INCREMENT PRIMARY KEY, `name` VARCHAR(256));
-
-INSERT INTO `nexus6`(`name`) VALUES("Leon");
-```
-
-Creating and granting permission for the user `replica_user`, with the host name set to %, and can have whatever password.
-```
-CREATE USER 'replica_user'@'%' IDENTIFIED BY 'replica_pwd';
-
-GRANT REPLICATION SLAVE ON *.* TO 'replica_user'@'%';
-
--- GRANT REPLICATION SLAVE ON *.* TO 'replica_user'@'%' IDENTIFIED BY 'replica_pwd';
-
--- Binlog Access:
--- GRANT SHOW VIEW ON *.* TO 'replication_user'@'%';
-
--- Read-Only Access:
--- GRANT SELECT ON *.* TO 'replication_user'@'%';
-
--- Database-specific Replication:
--- GRANT REPLICATION SLAVE ON your_database.* TO 'replication_user'@'%';
-
-```
-
+AUTHOR: <Bello Ibrahim>
