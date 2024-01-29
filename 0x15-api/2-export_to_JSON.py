@@ -2,9 +2,9 @@
 """ Script that uses REST API for a given employee ID
 and export data in the json format.
 """
+import json
 import requests
 from sys import argv
-import json
 
 
 def save_employee_json():
