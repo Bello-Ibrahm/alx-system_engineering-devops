@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-""" Script that uses REST API for a given employee ID
+""" Script that uses REST API to fetch all  employees
 and export data in the json format.
 """
 import requests
 import json
 
 
-def save_employee_json():
+def save_all_to_dict_json():
     base_url = 'https://jsonplaceholder.typicode.com/'
     user_res = requests.get(base_url + 'users').json()
 
@@ -23,4 +23,4 @@ def save_employee_json():
 
 
 if __name__ == "__main__":
-    save_employee_json()
+    save_all_to_dict_json()
