@@ -2,8 +2,8 @@
 """ Script that uses REST API to fetch all  employees
 and export data in the json format.
 """
-import requests
 import json
+import requests
 
 
 def save_all_to_dict_json():
@@ -15,10 +15,11 @@ def save_all_to_dict_json():
     with open(filename, 'w') as j_file:
         json.dump({
             u["id"]: [{
-            "username": u["username"],
-            "task": t["title"],
-            "completed": t["completed"],
-            } for t in requests.get(base_url + "todos?userId={}".format(u["id"])).json()]
+                "username": u["username"],
+                "task": t["title"],
+                "completed": t["completed"],
+            } for t in requests.get(base_url + "todos?userId={}"
+                                    .format(u["id"])).json()]
             for u in user_res}, j_file)
 
 
