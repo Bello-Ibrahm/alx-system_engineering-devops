@@ -29,7 +29,7 @@ def get_employee():
           .format(user_name, completed, total))
 
     for title in titles:
-        print("\t{}".format(title))
+        print("\t {}".format(title))
 
 
 if __name__ == "__main__":
