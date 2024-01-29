@@ -20,7 +20,7 @@ def save_employee_csv():
     with open(filename, 'w') as f:
         for t in todos_res:
             if t['userId'] == int(emp_id):
-                f.write('"{}", "{}", "{}", "{}"\n'
+                f.write('"{}","{}","{}","{}"\n'
                         .format(emp_id, emp_username,
                                 t['completed'], t['title']))
 
