@@ -15,7 +15,8 @@ def top_ten(subreddit):
             'limit': 10
             }
     try:
-        req = get(url, headers=header, params=param, allow_redirects=False).json()
+        req = get(url, headers=header, params=param,
+                  allow_redirects=False).json()
         res = req.get('data').get('children')
         print('\n'.join([dic.get('data').get('title')
                          for dic in res]))
