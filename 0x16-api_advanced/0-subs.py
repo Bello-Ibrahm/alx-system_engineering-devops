@@ -5,11 +5,8 @@ from requests import get
 
 def number_of_subscribers(subreddit):
     """ Get number of subscribers for a subreddit """
-    header = {
-            'User-Agent': 'Mohd Bello Ibrahim'
-            }
     count = get('https://www.reddit.com/r/{}/about.json'.format(
-        subreddit), headers=header).json()
+        subreddit), headers={'User-Agent': 'Moh\'d Bello Ibrahim'}).json()
     try:
         return count.get('data', {}).get('subscribers', 0)
     except Exception:
