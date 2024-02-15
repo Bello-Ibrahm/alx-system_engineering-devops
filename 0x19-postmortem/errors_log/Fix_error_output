@@ -1,0 +1,443 @@
+accept4(3, {sa_family=AF_INET, sin_port=htons(34150), sin_addr=inet_addr("127.0.0.1")}, [16], SOCK_CLOEXEC) = 11
+getsockname(11, {sa_family=AF_INET, sin_port=htons(80), sin_addr=inet_addr("127.0.0.1")}, [16]) = 0
+fcntl(11, F_GETFL)                      = 0x2 (flags O_RDWR)
+fcntl(11, F_SETFL, O_RDWR|O_NONBLOCK)   = 0
+read(11, "HEAD / HTTP/1.1\r\nUser-Agent: cur"..., 8000) = 74
+stat("/var/www/html/", {st_mode=S_IFDIR|0755, st_size=66, ...}) = 0
+stat("/var/www/html/index.html", 0x7ffd1d661080) = -1 ENOENT (No such file or directory)
+lstat("/var", {st_mode=S_IFDIR|0755, st_size=52, ...}) = 0
+lstat("/var/www", {st_mode=S_IFDIR|0755, st_size=18, ...}) = 0
+lstat("/var/www/html", {st_mode=S_IFDIR|0755, st_size=66, ...}) = 0
+lstat("/var/www/html/index.html", 0x7ffd1d661080) = -1 ENOENT (No such file or directory)
+stat("/var/www/html/index.cgi", 0x7ffd1d661080) = -1 ENOENT (No such file or directory)
+lstat("/var", {st_mode=S_IFDIR|0755, st_size=52, ...}) = 0
+lstat("/var/www", {st_mode=S_IFDIR|0755, st_size=18, ...}) = 0
+lstat("/var/www/html", {st_mode=S_IFDIR|0755, st_size=66, ...}) = 0
+lstat("/var/www/html/index.cgi", 0x7ffd1d661080) = -1 ENOENT (No such file or directory)
+stat("/var/www/html/index.pl", 0x7ffd1d661080) = -1 ENOENT (No such file or directory)
+lstat("/var", {st_mode=S_IFDIR|0755, st_size=52, ...}) = 0
+lstat("/var/www", {st_mode=S_IFDIR|0755, st_size=18, ...}) = 0
+lstat("/var/www/html", {st_mode=S_IFDIR|0755, st_size=66, ...}) = 0
+lstat("/var/www/html/index.pl", 0x7ffd1d661080) = -1 ENOENT (No such file or directory)
+stat("/var/www/html/index.php", {st_mode=S_IFREG|0644, st_size=418, ...}) = 0
+setitimer(ITIMER_PROF, {it_interval={0, 0}, it_value={60, 0}}, NULL) = 0
+rt_sigaction(SIGPROF, {0x7f9e4873ca50, [PROF], SA_RESTORER|SA_RESTART, 0x7f9e4ba1ecb0}, {0x7f9e4873ca50, [PROF], SA_RESTORER|SA_RESTART, 0x7f9e4ba1ecb0}, 8) = 0
+rt_sigprocmask(SIG_UNBLOCK, [PROF], NULL, 8) = 0
+getcwd("/", 4095)                       = 2
+chdir("/var/www/html")                  = 0
+setitimer(ITIMER_PROF, {it_interval={0, 0}, it_value={30, 0}}, NULL) = 0
+fcntl(8, F_SETLK, {type=F_RDLCK, whence=SEEK_SET, start=1, len=1}) = 0
+lstat("/var/www/html/index.php", {st_mode=S_IFREG|0644, st_size=418, ...}) = 0
+lstat("/var/www/html", {st_mode=S_IFDIR|0755, st_size=66, ...}) = 0
+lstat("/var/www", {st_mode=S_IFDIR|0755, st_size=18, ...}) = 0
+lstat("/var", {st_mode=S_IFDIR|0755, st_size=52, ...}) = 0
+stat("/var/www/html/index.php", {st_mode=S_IFREG|0644, st_size=418, ...}) = 0
+lstat("/var/www/html/wp-blog-header.php", {st_mode=S_IFREG|0644, st_size=364, ...}) = 0
+stat("/var/www/html/wp-blog-header.php", {st_mode=S_IFREG|0644, st_size=364, ...}) = 0
+stat("/var/www/html/wp-load.php", {st_mode=S_IFREG|0644, st_size=3301, ...}) = 0
+access("/var/www/html/wp-config.php", F_OK) = 0
+stat("/var/www/html/wp-config.php", {st_mode=S_IFREG|0644, st_size=3047, ...}) = 0
+stat("/var/www/html/wp-settings.php", {st_mode=S_IFREG|0644, st_size=16250, ...}) = 0
+stat("/var/www/html/wp-settings.php", {st_mode=S_IFREG|0644, st_size=16250, ...}) = 0
+fcntl(8, F_SETLKW, {type=F_WRLCK, whence=SEEK_SET, start=0, len=1}) = 0
+fcntl(8, F_SETLK, {type=F_UNLCK, whence=SEEK_SET, start=0, len=1}) = 0
+lstat("/var/www/html/wp-settings.php", {st_mode=S_IFREG|0644, st_size=16250, ...}) = 0
+open("/var/www/html/wp-settings.php", O_RDONLY) = 12
+fstat(12, {st_mode=S_IFREG|0644, st_size=16250, ...}) = 0
+fstat(12, {st_mode=S_IFREG|0644, st_size=16250, ...}) = 0
+fstat(12, {st_mode=S_IFREG|0644, st_size=16250, ...}) = 0
+fstat(12, {st_mode=S_IFREG|0644, st_size=16250, ...}) = 0
+mmap(NULL, 16250, PROT_READ, MAP_SHARED, 12, 0) = 0x7f9e4c708000
+stat("/var/www/html/wp-settings.php", {st_mode=S_IFREG|0644, st_size=16250, ...}) = 0
+fcntl(8, F_SETLKW, {type=F_WRLCK, whence=SEEK_SET, start=0, len=1}) = 0
+fcntl(8, F_SETLK, {type=F_UNLCK, whence=SEEK_SET, start=0, len=1}) = 0
+munmap(0x7f9e4c708000, 16250)           = 0
+close(12)                               = 0
+lstat("/var/www/html/wp-includes/load.php", {st_mode=S_IFREG|0644, st_size=31394, ...}) = 0
+lstat("/var/www/html/wp-includes", {st_mode=S_IFDIR|0755, st_size=6, ...}) = 0
+stat("/var/www/html/wp-includes/load.php", {st_mode=S_IFREG|0644, st_size=31394, ...}) = 0
+lstat("/var/www/html/wp-includes/default-constants.php", {st_mode=S_IFREG|0644, st_size=9489, ...}) = 0
+stat("/var/www/html/wp-includes/default-constants.php", {st_mode=S_IFREG|0644, st_size=9489, ...}) = 0
+stat("/var/www/html/wp-includes/plugin.php", {st_mode=S_IFREG|0644, st_size=31282, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-hook.php", {st_mode=S_IFREG|0644, st_size=14460, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-hook.php", {st_mode=S_IFREG|0644, st_size=14460, ...}) = 0
+lstat("/var/www/html/wp-includes/version.php", {st_mode=S_IFREG|0644, st_size=619, ...}) = 0
+stat("/var/www/html/wp-includes/version.php", {st_mode=S_IFREG|0644, st_size=619, ...}) = 0
+stat("/usr/share/zoneinfo/UTC", {st_mode=S_IFREG|0644, st_size=118, ...}) = 0
+access("/var/www/html/.maintenance", F_OK) = -1 ENOENT (No such file or directory)
+access("/var/www/html/wp-content/languages", F_OK) = -1 ENOENT (No such file or directory)
+stat("/var/www/html/wp-includes/languages", 0x7ffd1d65e3f0) = -1 ENOENT (No such file or directory)
+lstat("/var/www/html/wp-includes/compat.php", {st_mode=S_IFREG|0644, st_size=17195, ...}) = 0
+stat("/var/www/html/wp-includes/compat.php", {st_mode=S_IFREG|0644, st_size=17195, ...}) = 0
+lstat("/var/www/html/wp-includes/random_compat/random.php", {st_mode=S_IFREG|0644, st_size=7694, ...}) = 0
+lstat("/var/www/html/wp-includes/random_compat", {st_mode=S_IFDIR|0755, st_size=333, ...}) = 0
+stat("/var/www/html/wp-includes/random_compat/random.php", {st_mode=S_IFREG|0644, st_size=7694, ...}) = 0
+stat("/var/www/html/wp-includes/random_compat/byte_safe_strings.php", {st_mode=S_IFREG|0644, st_size=5651, ...}) = 0
+stat("/var/www/html/wp-includes/random_compat/cast_to_int.php", {st_mode=S_IFREG|0644, st_size=2461, ...}) = 0
+stat("/var/www/html/wp-includes/random_compat/error_polyfill.php", {st_mode=S_IFREG|0644, st_size=1533, ...}) = 0
+access("/dev/urandom", R_OK)            = 0
+stat("/var/www/html/wp-includes/random_compat/random_bytes_dev_urandom.php", {st_mode=S_IFREG|0644, st_size=4543, ...}) = 0
+stat("/var/www/html/wp-includes/random_compat/random_int.php", {st_mode=S_IFREG|0644, st_size=5697, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-list-util.php", {st_mode=S_IFREG|0644, st_size=6487, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-list-util.php", {st_mode=S_IFREG|0644, st_size=6487, ...}) = 0
+lstat("/var/www/html/wp-includes/functions.php", {st_mode=S_IFREG|0644, st_size=174663, ...}) = 0
+stat("/var/www/html/wp-includes/functions.php", {st_mode=S_IFREG|0644, st_size=174663, ...}) = 0
+lstat("/var/www/html/wp-includes/option.php", {st_mode=S_IFREG|0644, st_size=63787, ...}) = 0
+stat("/var/www/html/wp-includes/option.php", {st_mode=S_IFREG|0644, st_size=63787, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-matchesmapregex.php", {st_mode=S_IFREG|0644, st_size=1913, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-matchesmapregex.php", {st_mode=S_IFREG|0644, st_size=1913, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp.php", {st_mode=S_IFREG|0644, st_size=24136, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp.php", {st_mode=S_IFREG|0644, st_size=24136, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-error.php", {st_mode=S_IFREG|0644, st_size=4664, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-error.php", {st_mode=S_IFREG|0644, st_size=4664, ...}) = 0
+lstat("/var/www/html/wp-includes/pomo/mo.php", {st_mode=S_IFREG|0644, st_size=8462, ...}) = 0
+lstat("/var/www/html/wp-includes/pomo", {st_mode=S_IFDIR|0755, st_size=94, ...}) = 0
+stat("/var/www/html/wp-includes/pomo/mo.php", {st_mode=S_IFREG|0644, st_size=8462, ...}) = 0
+stat("/var/www/html/wp-includes/pomo/translations.php", {st_mode=S_IFREG|0644, st_size=8779, ...}) = 0
+stat("/var/www/html/wp-includes/pomo/entry.php", {st_mode=S_IFREG|0644, st_size=2887, ...}) = 0
+stat("/var/www/html/wp-includes/pomo/streams.php", {st_mode=S_IFREG|0644, st_size=5948, ...}) = 0
+lstat("/var/www/html/wp-includes/class-phpass.php", {st_mode=S_IFREG|0644, st_size=7317, ...}) = 0
+stat("/var/www/html/wp-includes/class-phpass.php", {st_mode=S_IFREG|0644, st_size=7317, ...}) = 0
+stat("/var/www/html/wp-includes/wp-db.php", {st_mode=S_IFREG|0644, st_size=95513, ...}) = 0
+access("/var/www/html/wp-content/db.php", F_OK) = -1 ENOENT (No such file or directory)
+socket(PF_LOCAL, SOCK_STREAM, 0)        = 12
+fcntl(12, F_SETFL, O_RDONLY)            = 0
+fcntl(12, F_GETFL)                      = 0x2 (flags O_RDWR)
+connect(12, {sa_family=AF_LOCAL, sun_path="/var/run/mysqld/mysqld.sock"}, 110) = 0
+setsockopt(12, SOL_SOCKET, SO_RCVTIMEO, "\2003\341\1\0\0\0\0\0\0\0\0\0\0\0\0", 16) = 0
+setsockopt(12, SOL_SOCKET, SO_SNDTIMEO, "\2003\341\1\0\0\0\0\0\0\0\0\0\0\0\0", 16) = 0
+setsockopt(12, SOL_IP, IP_TOS, [8], 4)  = -1 EOPNOTSUPP (Operation not supported)
+setsockopt(12, SOL_SOCKET, SO_KEEPALIVE, [1], 4) = 0
+read(12, "[\0\0\0\n5.5.54-0ubuntu0.14.04.1\0005\0\0"..., 16384) = 95
+write(12, "U\0\0\1\5\242\16\0\0\0\0@\10\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 89) = 89
+read(12, "\7\0\0\2\0\0\0\2\0\0\0", 16384) = 11
+poll([{fd=12, events=POLLIN|POLLPRI}], 1, 0) = 0 (Timeout)
+write(12, "\22\0\0\0\3SET NAMES utf8mb4", 22) = 22
+read(12, "\7\0\0\1\0\0\0\2\0\0\0", 16384) = 11
+poll([{fd=12, events=POLLIN|POLLPRI}], 1, 0) = 0 (Timeout)
+write(12, "1\0\0\0\3SET NAMES 'utf8mb4' COLLATE"..., 53) = 53
+read(12, "\7\0\0\1\0\0\0\2\0\0\0", 16384) = 11
+poll([{fd=12, events=POLLIN|POLLPRI}], 1, 0) = 0 (Timeout)
+write(12, "\32\0\0\0\3SELECT @@SESSION.sql_mode", 30) = 30
+read(12, "\1\0\0\1\1(\0\0\2\3def\0\0\0\22@@SESSION.sql_m"..., 16384) = 72
+poll([{fd=12, events=POLLIN|POLLPRI}], 1, 0) = 0 (Timeout)
+write(12, "\n\0\0\0\2wordpress", 14)    = 14
+read(12, "\7\0\0\1\0\0\0\2\0\0\0", 16384) = 11
+access("/var/www/html/wp-content/object-cache.php", F_OK) = -1 ENOENT (No such file or directory)
+stat("/var/www/html/wp-includes/cache.php", {st_mode=S_IFREG|0644, st_size=22058, ...}) = 0
+lstat("/var/www/html/wp-includes/default-filters.php", {st_mode=S_IFREG|0644, st_size=25220, ...}) = 0
+stat("/var/www/html/wp-includes/default-filters.php", {st_mode=S_IFREG|0644, st_size=25220, ...}) = 0
+stat("/var/www/html/wp-includes/l10n.php", {st_mode=S_IFREG|0644, st_size=43130, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-locale.php", {st_mode=S_IFREG|0644, st_size=14739, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-locale-switcher.php", {st_mode=S_IFREG|0644, st_size=5139, ...}) = 0
+poll([{fd=12, events=POLLIN|POLLPRI}], 1, 0) = 0 (Timeout)
+write(12, "H\0\0\0\3SELECT option_name, option_"..., 76) = 76
+read(12, "\1\0\0\1\2I\0\0\2\3def\twordpress\nwp_optio"..., 16384) = 7421
+lstat("/var/www/html/wp-includes/class-wp-walker.php", {st_mode=S_IFREG|0644, st_size=12368, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-walker.php", {st_mode=S_IFREG|0644, st_size=12368, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-ajax-response.php", {st_mode=S_IFREG|0644, st_size=5043, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-ajax-response.php", {st_mode=S_IFREG|0644, st_size=5043, ...}) = 0
+lstat("/var/www/html/wp-includes/formatting.php", {st_mode=S_IFREG|0644, st_size=189957, ...}) = 0
+stat("/var/www/html/wp-includes/formatting.php", {st_mode=S_IFREG|0644, st_size=189957, ...}) = 0
+lstat("/var/www/html/wp-includes/capabilities.php", {st_mode=S_IFREG|0644, st_size=23601, ...}) = 0
+stat("/var/www/html/wp-includes/capabilities.php", {st_mode=S_IFREG|0644, st_size=23601, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-roles.php", {st_mode=S_IFREG|0644, st_size=6574, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-roles.php", {st_mode=S_IFREG|0644, st_size=6574, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-role.php", {st_mode=S_IFREG|0644, st_size=2728, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-role.php", {st_mode=S_IFREG|0644, st_size=2728, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-user.php", {st_mode=S_IFREG|0644, st_size=19614, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-user.php", {st_mode=S_IFREG|0644, st_size=19614, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-query.php", {st_mode=S_IFREG|0644, st_size=122368, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-query.php", {st_mode=S_IFREG|0644, st_size=122368, ...}) = 0
+lstat("/var/www/html/wp-includes/query.php", {st_mode=S_IFREG|0644, st_size=23474, ...}) = 0
+stat("/var/www/html/wp-includes/query.php", {st_mode=S_IFREG|0644, st_size=23474, ...}) = 0
+lstat("/var/www/html/wp-includes/date.php", {st_mode=S_IFREG|0644, st_size=35333, ...}) = 0
+stat("/var/www/html/wp-includes/date.php", {st_mode=S_IFREG|0644, st_size=35333, ...}) = 0
+lstat("/var/www/html/wp-includes/theme.php", {st_mode=S_IFREG|0644, st_size=95900, ...}) = 0
+stat("/var/www/html/wp-includes/theme.php", {st_mode=S_IFREG|0644, st_size=95900, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-theme.php", {st_mode=S_IFREG|0644, st_size=47323, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-theme.php", {st_mode=S_IFREG|0644, st_size=47323, ...}) = 0
+lstat("/var/www/html/wp-includes/template.php", {st_mode=S_IFREG|0644, st_size=19318, ...}) = 0
+stat("/var/www/html/wp-includes/template.php", {st_mode=S_IFREG|0644, st_size=19318, ...}) = 0
+lstat("/var/www/html/wp-includes/user.php", {st_mode=S_IFREG|0644, st_size=85319, ...}) = 0
+stat("/var/www/html/wp-includes/user.php", {st_mode=S_IFREG|0644, st_size=85319, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-user-query.php", {st_mode=S_IFREG|0644, st_size=29868, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-user-query.php", {st_mode=S_IFREG|0644, st_size=29868, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-session-tokens.php", {st_mode=S_IFREG|0644, st_size=7511, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-session-tokens.php", {st_mode=S_IFREG|0644, st_size=7511, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-user-meta-session-tokens.php", {st_mode=S_IFREG|0644, st_size=3067, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-user-meta-session-tokens.php", {st_mode=S_IFREG|0644, st_size=3067, ...}) = 0
+lstat("/var/www/html/wp-includes/meta.php", {st_mode=S_IFREG|0644, st_size=37321, ...}) = 0
+stat("/var/www/html/wp-includes/meta.php", {st_mode=S_IFREG|0644, st_size=37321, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-meta-query.php", {st_mode=S_IFREG|0644, st_size=22695, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-meta-query.php", {st_mode=S_IFREG|0644, st_size=22695, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-metadata-lazyloader.php", {st_mode=S_IFREG|0644, st_size=5492, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-metadata-lazyloader.php", {st_mode=S_IFREG|0644, st_size=5492, ...}) = 0
+lstat("/var/www/html/wp-includes/general-template.php", {st_mode=S_IFREG|0644, st_size=124908, ...}) = 0
+stat("/var/www/html/wp-includes/general-template.php", {st_mode=S_IFREG|0644, st_size=124908, ...}) = 0
+lstat("/var/www/html/wp-includes/link-template.php", {st_mode=S_IFREG|0644, st_size=135008, ...}) = 0
+stat("/var/www/html/wp-includes/link-template.php", {st_mode=S_IFREG|0644, st_size=135008, ...}) = 0
+lstat("/var/www/html/wp-includes/author-template.php", {st_mode=S_IFREG|0644, st_size=15523, ...}) = 0
+stat("/var/www/html/wp-includes/author-template.php", {st_mode=S_IFREG|0644, st_size=15523, ...}) = 0
+lstat("/var/www/html/wp-includes/post.php", {st_mode=S_IFREG|0644, st_size=211223, ...}) = 0
+stat("/var/www/html/wp-includes/post.php", {st_mode=S_IFREG|0644, st_size=211223, ...}) = 0
+lstat("/var/www/html/wp-includes/class-walker-page.php", {st_mode=S_IFREG|0644, st_size=5957, ...}) = 0
+stat("/var/www/html/wp-includes/class-walker-page.php", {st_mode=S_IFREG|0644, st_size=5957, ...}) = 0
+lstat("/var/www/html/wp-includes/class-walker-page-dropdown.php", {st_mode=S_IFREG|0644, st_size=2336, ...}) = 0
+stat("/var/www/html/wp-includes/class-walker-page-dropdown.php", {st_mode=S_IFREG|0644, st_size=2336, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-post-type.php", {st_mode=S_IFREG|0644, st_size=18201, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-post-type.php", {st_mode=S_IFREG|0644, st_size=18201, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-post.php", {st_mode=S_IFREG|0644, st_size=5848, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-post.php", {st_mode=S_IFREG|0644, st_size=5848, ...}) = 0
+lstat("/var/www/html/wp-includes/post-template.php", {st_mode=S_IFREG|0644, st_size=58353, ...}) = 0
+stat("/var/www/html/wp-includes/post-template.php", {st_mode=S_IFREG|0644, st_size=58353, ...}) = 0
+lstat("/var/www/html/wp-includes/revision.php", {st_mode=S_IFREG|0644, st_size=21305, ...}) = 0
+stat("/var/www/html/wp-includes/revision.php", {st_mode=S_IFREG|0644, st_size=21305, ...}) = 0
+lstat("/var/www/html/wp-includes/post-formats.php", {st_mode=S_IFREG|0644, st_size=6951, ...}) = 0
+stat("/var/www/html/wp-includes/post-formats.php", {st_mode=S_IFREG|0644, st_size=6951, ...}) = 0
+lstat("/var/www/html/wp-includes/post-thumbnail-template.php", {st_mode=S_IFREG|0644, st_size=8104, ...}) = 0
+stat("/var/www/html/wp-includes/post-thumbnail-template.php", {st_mode=S_IFREG|0644, st_size=8104, ...}) = 0
+lstat("/var/www/html/wp-includes/category.php", {st_mode=S_IFREG|0644, st_size=11995, ...}) = 0
+stat("/var/www/html/wp-includes/category.php", {st_mode=S_IFREG|0644, st_size=11995, ...}) = 0
+lstat("/var/www/html/wp-includes/class-walker-category.php", {st_mode=S_IFREG|0644, st_size=6753, ...}) = 0
+stat("/var/www/html/wp-includes/class-walker-category.php", {st_mode=S_IFREG|0644, st_size=6753, ...}) = 0
+lstat("/var/www/html/wp-includes/class-walker-category-dropdown.php", {st_mode=S_IFREG|0644, st_size=2156, ...}) = 0
+stat("/var/www/html/wp-includes/class-walker-category-dropdown.php", {st_mode=S_IFREG|0644, st_size=2156, ...}) = 0
+lstat("/var/www/html/wp-includes/category-template.php", {st_mode=S_IFREG|0644, st_size=48493, ...}) = 0
+stat("/var/www/html/wp-includes/category-template.php", {st_mode=S_IFREG|0644, st_size=48493, ...}) = 0
+lstat("/var/www/html/wp-includes/comment.php", {st_mode=S_IFREG|0644, st_size=102002, ...}) = 0
+stat("/var/www/html/wp-includes/comment.php", {st_mode=S_IFREG|0644, st_size=102002, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-comment.php", {st_mode=S_IFREG|0644, st_size=9439, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-comment.php", {st_mode=S_IFREG|0644, st_size=9439, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-comment-query.php", {st_mode=S_IFREG|0644, st_size=42353, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-comment-query.php", {st_mode=S_IFREG|0644, st_size=42353, ...}) = 0
+lstat("/var/www/html/wp-includes/class-walker-comment.php", {st_mode=S_IFREG|0644, st_size=11370, ...}) = 0
+stat("/var/www/html/wp-includes/class-walker-comment.php", {st_mode=S_IFREG|0644, st_size=11370, ...}) = 0
+lstat("/var/www/html/wp-includes/comment-template.php", {st_mode=S_IFREG|0644, st_size=87234, ...}) = 0
+stat("/var/www/html/wp-includes/comment-template.php", {st_mode=S_IFREG|0644, st_size=87234, ...}) = 0
+lstat("/var/www/html/wp-includes/rewrite.php", {st_mode=S_IFREG|0644, st_size=17215, ...}) = 0
+stat("/var/www/html/wp-includes/rewrite.php", {st_mode=S_IFREG|0644, st_size=17215, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-rewrite.php", {st_mode=S_IFREG|0644, st_size=60125, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-rewrite.php", {st_mode=S_IFREG|0644, st_size=60125, ...}) = 0
+lstat("/var/www/html/wp-includes/feed.php", {st_mode=S_IFREG|0644, st_size=19525, ...}) = 0
+stat("/var/www/html/wp-includes/feed.php", {st_mode=S_IFREG|0644, st_size=19525, ...}) = 0
+lstat("/var/www/html/wp-includes/bookmark.php", {st_mode=S_IFREG|0644, st_size=13664, ...}) = 0
+stat("/var/www/html/wp-includes/bookmark.php", {st_mode=S_IFREG|0644, st_size=13664, ...}) = 0
+lstat("/var/www/html/wp-includes/bookmark-template.php", {st_mode=S_IFREG|0644, st_size=11699, ...}) = 0
+stat("/var/www/html/wp-includes/bookmark-template.php", {st_mode=S_IFREG|0644, st_size=11699, ...}) = 0
+lstat("/var/www/html/wp-includes/kses.php", {st_mode=S_IFREG|0644, st_size=50116, ...}) = 0
+stat("/var/www/html/wp-includes/kses.php", {st_mode=S_IFREG|0644, st_size=50116, ...}) = 0
+lstat("/var/www/html/wp-includes/cron.php", {st_mode=S_IFREG|0644, st_size=15941, ...}) = 0
+stat("/var/www/html/wp-includes/cron.php", {st_mode=S_IFREG|0644, st_size=15941, ...}) = 0
+lstat("/var/www/html/wp-includes/deprecated.php", {st_mode=S_IFREG|0644, st_size=111493, ...}) = 0
+stat("/var/www/html/wp-includes/deprecated.php", {st_mode=S_IFREG|0644, st_size=111493, ...}) = 0
+lstat("/var/www/html/wp-includes/script-loader.php", {st_mode=S_IFREG|0644, st_size=65506, ...}) = 0
+stat("/var/www/html/wp-includes/script-loader.php", {st_mode=S_IFREG|0644, st_size=65506, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-dependency.php", {st_mode=S_IFREG|0644, st_size=1683, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-dependency.php", {st_mode=S_IFREG|0644, st_size=1683, ...}) = 0
+lstat("/var/www/html/wp-includes/class.wp-dependencies.php", {st_mode=S_IFREG|0644, st_size=11547, ...}) = 0
+stat("/var/www/html/wp-includes/class.wp-dependencies.php", {st_mode=S_IFREG|0644, st_size=11547, ...}) = 0
+lstat("/var/www/html/wp-includes/class.wp-scripts.php", {st_mode=S_IFREG|0644, st_size=14681, ...}) = 0
+stat("/var/www/html/wp-includes/class.wp-scripts.php", {st_mode=S_IFREG|0644, st_size=14681, ...}) = 0
+lstat("/var/www/html/wp-includes/functions.wp-scripts.php", {st_mode=S_IFREG|0644, st_size=11481, ...}) = 0
+stat("/var/www/html/wp-includes/functions.wp-scripts.php", {st_mode=S_IFREG|0644, st_size=11481, ...}) = 0
+lstat("/var/www/html/wp-includes/class.wp-styles.php", {st_mode=S_IFREG|0644, st_size=10175, ...}) = 0
+stat("/var/www/html/wp-includes/class.wp-styles.php", {st_mode=S_IFREG|0644, st_size=10175, ...}) = 0
+lstat("/var/www/html/wp-includes/functions.wp-styles.php", {st_mode=S_IFREG|0644, st_size=8080, ...}) = 0
+stat("/var/www/html/wp-includes/functions.wp-styles.php", {st_mode=S_IFREG|0644, st_size=8080, ...}) = 0
+lstat("/var/www/html/wp-includes/taxonomy.php", {st_mode=S_IFREG|0644, st_size=149869, ...}) = 0
+stat("/var/www/html/wp-includes/taxonomy.php", {st_mode=S_IFREG|0644, st_size=149869, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-taxonomy.php", {st_mode=S_IFREG|0644, st_size=9739, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-taxonomy.php", {st_mode=S_IFREG|0644, st_size=9739, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-term.php", {st_mode=S_IFREG|0644, st_size=5416, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-term.php", {st_mode=S_IFREG|0644, st_size=5416, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-term-query.php", {st_mode=S_IFREG|0644, st_size=32744, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-term-query.php", {st_mode=S_IFREG|0644, st_size=32744, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-tax-query.php", {st_mode=S_IFREG|0644, st_size=19677, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-tax-query.php", {st_mode=S_IFREG|0644, st_size=19677, ...}) = 0
+lstat("/var/www/html/wp-includes/update.php", {st_mode=S_IFREG|0644, st_size=23621, ...}) = 0
+stat("/var/www/html/wp-includes/update.php", {st_mode=S_IFREG|0644, st_size=23621, ...}) = 0
+lstat("/var/www/html/wp-includes/canonical.php", {st_mode=S_IFREG|0644, st_size=26902, ...}) = 0
+stat("/var/www/html/wp-includes/canonical.php", {st_mode=S_IFREG|0644, st_size=26902, ...}) = 0
+lstat("/var/www/html/wp-includes/shortcodes.php", {st_mode=S_IFREG|0644, st_size=20706, ...}) = 0
+stat("/var/www/html/wp-includes/shortcodes.php", {st_mode=S_IFREG|0644, st_size=20706, ...}) = 0
+lstat("/var/www/html/wp-includes/embed.php", {st_mode=S_IFREG|0644, st_size=43664, ...}) = 0
+stat("/var/www/html/wp-includes/embed.php", {st_mode=S_IFREG|0644, st_size=43664, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-embed.php", {st_mode=S_IFREG|0644, st_size=12085, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-embed.php", {st_mode=S_IFREG|0644, st_size=12085, ...}) = 0
+lstat("/var/www/html/wp-includes/class-oembed.php", {st_mode=S_IFREG|0644, st_size=29041, ...}) = 0
+stat("/var/www/html/wp-includes/class-oembed.php", {st_mode=S_IFREG|0644, st_size=29041, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-oembed-controller.php", {st_mode=S_IFREG|0644, st_size=2087, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-oembed-controller.php", {st_mode=S_IFREG|0644, st_size=2087, ...}) = 0
+lstat("/var/www/html/wp-includes/media.php", {st_mode=S_IFREG|0644, st_size=134337, ...}) = 0
+stat("/var/www/html/wp-includes/media.php", {st_mode=S_IFREG|0644, st_size=134337, ...}) = 0
+lstat("/var/www/html/wp-includes/http.php", {st_mode=S_IFREG|0644, st_size=22210, ...}) = 0
+stat("/var/www/html/wp-includes/http.php", {st_mode=S_IFREG|0644, st_size=22210, ...}) = 0
+lstat("/var/www/html/wp-includes/class-http.php", {st_mode=S_IFREG|0644, st_size=35748, ...}) = 0
+stat("/var/www/html/wp-includes/class-http.php", {st_mode=S_IFREG|0644, st_size=35748, ...}) = 0
+lstat("/var/www/html/wp-includes/class-requests.php", {st_mode=S_IFREG|0644, st_size=29790, ...}) = 0
+stat("/var/www/html/wp-includes/class-requests.php", {st_mode=S_IFREG|0644, st_size=29790, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-http-streams.php", {st_mode=S_IFREG|0644, st_size=14948, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-http-streams.php", {st_mode=S_IFREG|0644, st_size=14948, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-http-curl.php", {st_mode=S_IFREG|0644, st_size=11731, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-http-curl.php", {st_mode=S_IFREG|0644, st_size=11731, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-http-proxy.php", {st_mode=S_IFREG|0644, st_size=5957, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-http-proxy.php", {st_mode=S_IFREG|0644, st_size=5957, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-http-cookie.php", {st_mode=S_IFREG|0644, st_size=6551, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-http-cookie.php", {st_mode=S_IFREG|0644, st_size=6551, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-http-encoding.php", {st_mode=S_IFREG|0644, st_size=6444, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-http-encoding.php", {st_mode=S_IFREG|0644, st_size=6444, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-http-response.php", {st_mode=S_IFREG|0644, st_size=3094, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-http-response.php", {st_mode=S_IFREG|0644, st_size=3094, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-http-requests-response.php", {st_mode=S_IFREG|0644, st_size=4526, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-http-requests-response.php", {st_mode=S_IFREG|0644, st_size=4526, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-http-requests-hooks.php", {st_mode=S_IFREG|0644, st_size=1888, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-http-requests-hooks.php", {st_mode=S_IFREG|0644, st_size=1888, ...}) = 0
+access("/var/www/html/wp-includes/Requests/Hooks.php", F_OK) = 0
+stat("/var/www/html/wp-includes/Requests/Hooks.php", {st_mode=S_IFREG|0644, st_size=1399, ...}) = 0
+access("/var/www/html/wp-includes/Requests/Hooker.php", F_OK) = 0
+stat("/var/www/html/wp-includes/Requests/Hooker.php", {st_mode=S_IFREG|0644, st_size=708, ...}) = 0
+lstat("/var/www/html/wp-includes/widgets.php", {st_mode=S_IFREG|0644, st_size=48094, ...}) = 0
+stat("/var/www/html/wp-includes/widgets.php", {st_mode=S_IFREG|0644, st_size=48094, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-widget.php", {st_mode=S_IFREG|0644, st_size=18189, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-widget.php", {st_mode=S_IFREG|0644, st_size=18189, ...}) = 0
+lstat("/var/www/html/wp-includes/class-wp-widget-factory.php", {st_mode=S_IFREG|0644, st_size=3900, ...}) = 0
+stat("/var/www/html/wp-includes/class-wp-widget-factory.php", {st_mode=S_IFREG|0644, st_size=3900, ...}) = 0
+lstat("/var/www/html/wp-includes/nav-menu.php", {st_mode=S_IFREG|0644, st_size=32330, ...}) = 0
+stat("/var/www/html/wp-includes/nav-menu.php", {st_mode=S_IFREG|0644, st_size=32330, ...}) = 0
+lstat("/var/www/html/wp-includes/nav-menu-template.php", {st_mode=S_IFREG|0644, st_size=20323, ...}) = 0
+stat("/var/www/html/wp-includes/nav-menu-template.php", {st_mode=S_IFREG|0644, st_size=20323, ...}) = 0
+stat("/var/www/html/wp-includes/class-walker-nav-menu.php", {st_mode=S_IFREG|0644, st_size=7860, ...}) = 0
+lstat("/var/www/html/wp-includes/admin-bar.php", {st_mode=S_IFREG|0644, st_size=27254, ...}) = 0
+stat("/var/www/html/wp-includes/admin-bar.php", {st_mode=S_IFREG|0644, st_size=27254, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api.php", {st_mode=S_IFREG|0644, st_size=35637, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api.php", {st_mode=S_IFREG|0644, st_size=35637, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/class-wp-rest-server.php", {st_mode=S_IFREG|0644, st_size=37515, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api", {st_mode=S_IFDIR|0755, st_size=136, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/class-wp-rest-server.php", {st_mode=S_IFREG|0644, st_size=37515, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/class-wp-rest-response.php", {st_mode=S_IFREG|0644, st_size=7633, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/class-wp-rest-response.php", {st_mode=S_IFREG|0644, st_size=7633, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/class-wp-rest-request.php", {st_mode=S_IFREG|0644, st_size=24770, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/class-wp-rest-request.php", {st_mode=S_IFREG|0644, st_size=24770, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-controller.php", {st_mode=S_IFREG|0644, st_size=18070, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/endpoints", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-controller.php", {st_mode=S_IFREG|0644, st_size=18070, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php", {st_mode=S_IFREG|0644, st_size=72286, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php", {st_mode=S_IFREG|0644, st_size=72286, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php", {st_mode=S_IFREG|0644, st_size=23619, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php", {st_mode=S_IFREG|0644, st_size=23619, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-post-types-controller.php", {st_mode=S_IFREG|0644, st_size=8734, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-post-types-controller.php", {st_mode=S_IFREG|0644, st_size=8734, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-post-statuses-controller.php", {st_mode=S_IFREG|0644, st_size=9303, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-post-statuses-controller.php", {st_mode=S_IFREG|0644, st_size=9303, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php", {st_mode=S_IFREG|0644, st_size=17226, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php", {st_mode=S_IFREG|0644, st_size=17226, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-taxonomies-controller.php", {st_mode=S_IFREG|0644, st_size=10109, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-taxonomies-controller.php", {st_mode=S_IFREG|0644, st_size=10109, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php", {st_mode=S_IFREG|0644, st_size=30404, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php", {st_mode=S_IFREG|0644, st_size=30404, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php", {st_mode=S_IFREG|0644, st_size=43590, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php", {st_mode=S_IFREG|0644, st_size=43590, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php", {st_mode=S_IFREG|0644, st_size=53662, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php", {st_mode=S_IFREG|0644, st_size=53662, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-settings-controller.php", {st_mode=S_IFREG|0644, st_size=9304, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/endpoints/class-wp-rest-settings-controller.php", {st_mode=S_IFREG|0644, st_size=9304, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/fields/class-wp-rest-meta-fields.php", {st_mode=S_IFREG|0644, st_size=13460, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/fields", {st_mode=S_IFDIR|0755, st_size=214, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/fields/class-wp-rest-meta-fields.php", {st_mode=S_IFREG|0644, st_size=13460, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/fields/class-wp-rest-comment-meta-fields.php", {st_mode=S_IFREG|0644, st_size=743, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/fields/class-wp-rest-comment-meta-fields.php", {st_mode=S_IFREG|0644, st_size=743, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/fields/class-wp-rest-post-meta-fields.php", {st_mode=S_IFREG|0644, st_size=1098, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/fields/class-wp-rest-post-meta-fields.php", {st_mode=S_IFREG|0644, st_size=1098, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/fields/class-wp-rest-term-meta-fields.php", {st_mode=S_IFREG|0644, st_size=1096, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/fields/class-wp-rest-term-meta-fields.php", {st_mode=S_IFREG|0644, st_size=1096, ...}) = 0
+lstat("/var/www/html/wp-includes/rest-api/fields/class-wp-rest-user-meta-fields.php", {st_mode=S_IFREG|0644, st_size=716, ...}) = 0
+stat("/var/www/html/wp-includes/rest-api/fields/class-wp-rest-user-meta-fields.php", {st_mode=S_IFREG|0644, st_size=716, ...}) = 0
+stat("/var/www/html/wp-content/mu-plugins", 0x7ffd1d65e3f0) = -1 ENOENT (No such file or directory)
+lstat("/var/www/html/wp-includes/vars.php", {st_mode=S_IFREG|0644, st_size=5326, ...}) = 0
+stat("/var/www/html/wp-includes/vars.php", {st_mode=S_IFREG|0644, st_size=5326, ...}) = 0
+access("/var/www/html/wp-content/themes", F_OK) = 0
+lstat("/var/www/html/wp-includes/pluggable.php", {st_mode=S_IFREG|0644, st_size=86456, ...}) = 0
+stat("/var/www/html/wp-includes/pluggable.php", {st_mode=S_IFREG|0644, st_size=86456, ...}) = 0
+lstat("/var/www/html/wp-includes/pluggable-deprecated.php", {st_mode=S_IFREG|0644, st_size=6262, ...}) = 0
+stat("/var/www/html/wp-includes/pluggable-deprecated.php", {st_mode=S_IFREG|0644, st_size=6262, ...}) = 0
+stat("/var/www/html/wp-includes/default-widgets.php", {st_mode=S_IFREG|0644, st_size=1504, ...}) = 0
+stat("/var/www/html/wp-includes/widgets/class-wp-widget-pages.php", {st_mode=S_IFREG|0644, st_size=4795, ...}) = 0
+stat("/var/www/html/wp-includes/widgets/class-wp-widget-links.php", {st_mode=S_IFREG|0644, st_size=6983, ...}) = 0
+stat("/var/www/html/wp-includes/widgets/class-wp-widget-search.php", {st_mode=S_IFREG|0644, st_size=2662, ...}) = 0
+stat("/var/www/html/wp-includes/widgets/class-wp-widget-archives.php", {st_mode=S_IFREG|0644, st_size=5199, ...}) = 0
+stat("/var/www/html/wp-includes/widgets/class-wp-widget-meta.php", {st_mode=S_IFREG|0644, st_size=3506, ...}) = 0
+stat("/var/www/html/wp-includes/widgets/class-wp-widget-calendar.php", {st_mode=S_IFREG|0644, st_size=2946, ...}) = 0
+stat("/var/www/html/wp-includes/widgets/class-wp-widget-text.php", {st_mode=S_IFREG|0644, st_size=4118, ...}) = 0
+stat("/var/www/html/wp-includes/widgets/class-wp-widget-categories.php", {st_mode=S_IFREG|0644, st_size=5672, ...}) = 0
+stat("/var/www/html/wp-includes/widgets/class-wp-widget-recent-posts.php", {st_mode=S_IFREG|0644, st_size=4824, ...}) = 0
+stat("/var/www/html/wp-includes/widgets/class-wp-widget-recent-comments.php", {st_mode=S_IFREG|0644, st_size=5805, ...}) = 0
+stat("/var/www/html/wp-includes/widgets/class-wp-widget-rss.php", {st_mode=S_IFREG|0644, st_size=3749, ...}) = 0
+stat("/var/www/html/wp-includes/widgets/class-wp-widget-tag-cloud.php", {st_mode=S_IFREG|0644, st_size=5056, ...}) = 0
+stat("/var/www/html/wp-includes/widgets/class-wp-nav-menu-widget.php", {st_mode=S_IFREG|0644, st_size=5384, ...}) = 0
+access("/var/www/html/wp-content/languages/en_US.mo", R_OK) = -1 ENOENT (No such file or directory)
+access("/var/www/html/wp-content/languages/en_US.php", R_OK) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/var/www/html/wp-content/languages", O_RDONLY|O_NONBLOCK|O_DIRECTORY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+access("/var/www/html/wp-content/themes/twentyseventeen/functions.php", F_OK) = 0
+lstat("/var/www/html/wp-content/themes/twentyseventeen/functions.php", {st_mode=S_IFREG|0644, st_size=18147, ...}) = 0
+lstat("/var/www/html/wp-content/themes/twentyseventeen", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+lstat("/var/www/html/wp-content/themes", {st_mode=S_IFDIR|0755, st_size=6, ...}) = 0
+lstat("/var/www/html/wp-content", {st_mode=S_IFDIR|0755, st_size=35, ...}) = 0
+stat("/var/www/html/wp-content/themes/twentyseventeen/functions.php", {st_mode=S_IFREG|0644, st_size=18147, ...}) = 0
+lstat("/var/www/html/wp-content/themes/twentyseventeen/inc/custom-header.php", {st_mode=S_IFREG|0644, st_size=4289, ...}) = 0
+lstat("/var/www/html/wp-content/themes/twentyseventeen/inc", {st_mode=S_IFDIR|0755, st_size=183, ...}) = 0
+stat("/var/www/html/wp-content/themes/twentyseventeen/inc/custom-header.php", {st_mode=S_IFREG|0644, st_size=4289, ...}) = 0
+lstat("/var/www/html/wp-content/themes/twentyseventeen/inc/template-tags.php", {st_mode=S_IFREG|0644, st_size=6484, ...}) = 0
+lstat("/var/www/html/wp-content/themes/twentyseventeen/inc", {st_mode=S_IFDIR|0755, st_size=183, ...}) = 0
+stat("/var/www/html/wp-content/themes/twentyseventeen/inc/template-tags.php", {st_mode=S_IFREG|0644, st_size=6484, ...}) = 0
+lstat("/var/www/html/wp-content/themes/twentyseventeen/inc/template-functions.php", {st_mode=S_IFREG|0644, st_size=2529, ...}) = 0
+lstat("/var/www/html/wp-content/themes/twentyseventeen/inc", {st_mode=S_IFDIR|0755, st_size=183, ...}) = 0
+stat("/var/www/html/wp-content/themes/twentyseventeen/inc/template-functions.php", {st_mode=S_IFREG|0644, st_size=2529, ...}) = 0
+lstat("/var/www/html/wp-content/themes/twentyseventeen/inc/customizer.php", {st_mode=S_IFREG|0644, st_size=6555, ...}) = 0
+lstat("/var/www/html/wp-content/themes/twentyseventeen/inc", {st_mode=S_IFDIR|0755, st_size=183, ...}) = 0
+stat("/var/www/html/wp-content/themes/twentyseventeen/inc/customizer.php", {st_mode=S_IFREG|0644, st_size=6555, ...}) = 0
+lstat("/var/www/html/wp-content/themes/twentyseventeen/inc/icon-functions.php", {st_mode=S_IFREG|0644, st_size=7005, ...}) = 0
+lstat("/var/www/html/wp-content/themes/twentyseventeen/inc", {st_mode=S_IFDIR|0755, st_size=183, ...}) = 0
+stat("/var/www/html/wp-content/themes/twentyseventeen/inc/icon-functions.php", {st_mode=S_IFREG|0644, st_size=7005, ...}) = 0
+access("/var/www/html/wp-content/languages/themes/twentyseventeen-en_US.mo", R_OK) = -1 ENOENT (No such file or directory)
+access("/var/www/html/wp-content/themes/twentyseventeen/en_US.mo", R_OK) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/var/www/html/wp-content/languages/plugins", O_RDONLY|O_NONBLOCK|O_DIRECTORY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/var/www/html/wp-content/languages/themes", O_RDONLY|O_NONBLOCK|O_DIRECTORY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+poll([{fd=12, events=POLLIN|POLLPRI}], 1, 0) = 0 (Timeout)
+write(12, "Q\0\0\0\3SELECT option_value FROM wp"..., 85) = 85
+read(12, "\1\0\0\1\1K\0\0\2\3def\twordpress\nwp_optio"..., 16384) = 102
+poll([{fd=12, events=POLLIN|POLLPRI}], 1, 0) = 0 (Timeout)
+write(12, "\267\0\0\0\3SELECT SQL_CALC_FOUND_ROWS "..., 187) = 187
+read(12, "\1\0\0\1\0013\0\0\2\3def\twordpress\10wp_posts"..., 16384) = 84
+poll([{fd=12, events=POLLIN|POLLPRI}], 1, 0) = 0 (Timeout)
+write(12, "\24\0\0\0\3SELECT FOUND_ROWS()", 24) = 24
+read(12, "\1\0\0\1\1\"\0\0\2\3def\0\0\0\fFOUND_ROWS()\0\f?"..., 16384) = 67
+poll([{fd=12, events=POLLIN|POLLPRI}], 1, 0) = 0 (Timeout)
+write(12, "0\0\0\0\3SELECT wp_posts.* FROM wp_p"..., 52) = 52
+read(12, "\1\0\0\1\0273\0\0\2\3def\twordpress\10wp_posts"..., 16384) = 1914
+poll([{fd=12, events=POLLIN|POLLPRI}], 1, 0) = 0 (Timeout)
+write(12, ".\1\0\0\3SELECT  t.*, tt.*, tr.objec"..., 306) = 306
+read(12, "\1\0\0\1\v6\0\0\2\3def\twordpress\1t\10wp_ter"..., 16384) = 805
+poll([{fd=12, events=POLLIN|POLLPRI}], 1, 0) = 0 (Timeout)
+write(12, "`\0\0\0\3SELECT post_id, meta_key, m"..., 100) = 100
+read(12, "\1\0\0\1\3C\0\0\2\3def\twordpress\vwp_postm"..., 16384) = 293
+stat("/var/www/html/wp-includes/template-loader.php", {st_mode=S_IFREG|0644, st_size=2896, ...}) = 0
+chdir("/")                              = 0
+write(12, "\1\0\0\0\1", 5)              = 5
+shutdown(12, SHUT_RDWR)                 = 0
+close(12)                               = 0
+setitimer(ITIMER_PROF, {it_interval={0, 0}, it_value={0, 0}}, NULL) = 0
+fcntl(8, F_SETLK, {type=F_UNLCK, whence=SEEK_SET, start=0, len=0}) = 0
+setitimer(ITIMER_PROF, {it_interval={0, 0}, it_value={0, 0}}, NULL) = 0
+read(11, 0x7f9e4c712048, 8000)          = -1 EAGAIN (Resource temporarily unavailable)
+writev(11, [{"HTTP/1.1 200 OK\r\nDate: Thu, 15 F"..., 230}], 1) = 230
+write(7, "127.0.0.1 - - [15/Feb/2024:14:06"..., 87) = 87
+times({tms_utime=35, tms_stime=9, tms_cutime=0, tms_cstime=0}) = 2079733816
+poll([{fd=11, events=POLLIN}], 1, 5000) = 1 ([{fd=11, revents=POLLIN}])
+read(11, "", 8000)                      = 0
+shutdown(11, SHUT_WR)                   = 0
+poll([{fd=11, events=POLLIN}], 1, 2000) = 1 ([{fd=11, revents=POLLIN|POLLHUP}])
+read(11, "", 512)                       = 0
+close(11)                               = 0
+read(4, 0x7ffd1d661537, 1)              = -1 EAGAIN (Resource temporarily unavailable)
+accept4(3, 
