@@ -1,5 +1,5 @@
 # Tasks
-# [0. My first postmortem]()
+# [0. My first postmortem](https://www.linkedin.com/pulse/how-i-resolved-wordpress-website-experiencing-500-internal-ibrahim-ix52f)
 
 Using one of the web stack debugging project issue or an outage you have personally face, write a postmortem. Most of you will never have faced an outage, so just get creative and invent your own :)
 
@@ -36,3 +36,7 @@ Requirements:
 While postmortem format can vary, stick to this one so that you can get properly reviewed by your peers.
 
 Please, remember that these blogs must be written in English to further your technical ability in a variety of settings.
+
+[Error detection output file - (line 116 - 119)](https://github.com/Bello-Ibrahm/alx-system_engineering-devops/blob/master/0x19-postmortem/errors_log/Error_output)
+
+To know the whole process [visit blog post](https://www.linkedin.com/pulse/how-i-resolved-wordpress-website-experiencing-500-internal-ibrahim-ix52f)
