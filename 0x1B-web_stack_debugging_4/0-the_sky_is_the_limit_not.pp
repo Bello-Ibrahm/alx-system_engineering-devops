@@ -1,8 +1,8 @@
 # Increase the ULIMIT of the default file
-exec { 'set-limit-to-2000':
+exec { 'set limit to 2000':
   path    => '/bin',
-  command => 'sed -i "s/15/2000/" /etc/default/nginx'
+  command => "sed -i 's/15/2000/' /etc/default/nginx"
 }
-exec { 'nginx-restart':
-  command => 'nginx restart'
+exec { 'reboot nginx':
+  command => '/usr/sbin/service nginx restart'
 }
