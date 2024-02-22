@@ -15,7 +15,7 @@ server {
     }
 
     # Serve /number_odd_or_even/ route to port 5001
-    location ~ /airbnb-dynamic/number_odd_or_even/(\d+)$ {
+    location ~ ^/airbnb-dynamic/number_odd_or_even/([0-9]+)$ {
         proxy_pass http://127.0.0.1:5001/number_odd_or_even/$1;
     }
 
