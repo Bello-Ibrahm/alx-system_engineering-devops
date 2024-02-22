@@ -3,7 +3,7 @@
 # Increase the ULIMIT of the default file
 exec { 'set-limit-to-2000':
   command => 'sed -i "s/15/2000/" /etc/default/nginx',
-  path    => ['/usr/local/bin', '/bin']
+  path    => '/usr/local/bin/:/bin/'
 } ->
 
 # Restart Nginx
